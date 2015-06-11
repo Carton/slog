@@ -313,10 +313,10 @@ void init_slog(const char* fname, const char* conf, int lvl)
 {
     slg.level = lvl;
     slg.fname = fname;
-    slg.to_file = 0;
+    slg.to_file = 1;
 
     /* Parse config file */
-    if (parse_config(conf))
+    if (conf && parse_config(conf))
     {
         slog(0, SLOG_WARN, "LOGLEVEL and/or LOGTOFILE flag is not set from config.");
 
